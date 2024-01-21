@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgIterable } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Transactionslist } from '../transactionslist';
 
@@ -12,5 +12,5 @@ import { Transactionslist } from '../transactionslist';
   styleUrl: './transaction-table.component.css'
 })
 export class TransactionTableComponent {
-  @Input() transactions!: Transactionslist;
+  @Input() transactions!: NgIterable<Transactionslist>;
 }
