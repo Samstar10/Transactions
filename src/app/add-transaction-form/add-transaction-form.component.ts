@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { Transactionslist } from '../transactionslist';
+import { TransactionsService } from '../transactions.service';
 
 @Component({
   selector: 'app-add-transaction-form',

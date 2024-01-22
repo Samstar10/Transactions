@@ -3,13 +3,16 @@ import { TransactionTableComponent } from '../transaction-table/transaction-tabl
 import { CommonModule } from '@angular/common';
 import { Transactionslist } from '../transactionslist';
 import { TransactionsService } from '../transactions.service';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     CommonModule,
-    TransactionTableComponent
+    TransactionTableComponent,
+    RouterLink,
+    RouterOutlet
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
