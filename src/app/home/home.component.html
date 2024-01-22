@@ -1,7 +1,7 @@
 <section>
     <form>
-        <input type="text" placeholder="Search transaction">
-        <button type="button">Search</button>
+        <input type="text" placeholder="Search transaction" #filter>
+        <button type="button" (click)="filterTransactions(filter.value)">Search</button>
         <a [routerLink]="['add-transaction']"><button type=button>Add a transaction</button></a>
     </form>
 </section>

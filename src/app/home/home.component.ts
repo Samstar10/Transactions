@@ -18,10 +18,20 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  filteredTransactions: Transactionslist[] = [];
   transactions: Transactionslist[] = [];
-  housingService: TransactionsService = inject(TransactionsService);
+  transactionsService: TransactionsService = inject(TransactionsService);
 
   constructor() {
-    this.transactions = this.housingService.getAllTransactions();
+    this.transactionsService.getAllTransactions().then((transactions) => {
+      this.transactions = transactions;
+      this.filteredTransactions = transactions;
+    })
+  }
+
+  filterTransactions(filterValue: string) {
+    this.filteredTransactions = this.transactions.filter((transaction) => {
+      return transaction.description.toLowerCase().includes(filterValue.toLowerCase());
+    });
   }
 }
