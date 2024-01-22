@@ -33,5 +33,7 @@ export class AddTransactionFormComponent {
       this.transactionForm.value.category ?? '',
       this.transactionForm.value.amount ?? ''
     );
+
+    this.transactionForm.reset();
   }
 }

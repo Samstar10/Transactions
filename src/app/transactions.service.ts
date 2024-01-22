@@ -8,13 +8,39 @@ export class TransactionsService {
 
   url = 'http://localhost:3000/transactions';
 
+
   async getAllTransactions(): Promise<Transactionslist[]> {
-    const response = await fetch(this.url);
-    const data = await response.json();
-    return data;
+    const data = await fetch(this.url);
+    const transactions: Transactionslist[] = await data.json();
+    return transactions
   }
 
+
   submitTransaction(date: string, description: string, category: string, amount: string) {
-    console.log('Submitted transaction:', date, description, category, amount);
+    const transaction: Transactionslist = {
+      id: Math.floor(Math.random() * 1000),
+      date: date,
+      description: description,
+      category: category,
+      amount: Number(amount)
+    }
+    this.url = 'http://localhost:3000/transactions';
+    fetch(this.url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(transaction)
+    })
+  }
+
+  deleteTransaction(id: number) {
+    this.url = 'http://localhost:3000/transactions/' + id;
+    fetch(this.url, {
+      method: 'DELETE'
+    })
+      .then(() => {
+        console.log('Transaction deleted')
+      })
   }
 }

@@ -23,15 +23,23 @@ export class HomeComponent {
   transactionsService: TransactionsService = inject(TransactionsService);
 
   constructor() {
-    this.transactionsService.getAllTransactions().then((transactions) => {
-      this.transactions = transactions;
-      this.filteredTransactions = transactions;
-    })
+    this.transactionsService.getAllTransactions().then(
+      (transactions: Transactionslist[]) => {
+        this.transactions = transactions;
+        this.filteredTransactions = transactions;
+      }
+    )
   }
 
   filterTransactions(filterValue: string) {
-    this.filteredTransactions = this.transactions.filter((transaction) => {
-      return transaction.description.toLowerCase().includes(filterValue.toLowerCase());
-    });
+    if (!filterValue){
+      this.filteredTransactions = this.transactions;
+    }else{
+      this.filteredTransactions = this.transactions.filter((transaction) => {
+        return transaction.description.toLowerCase().includes(filterValue.toLowerCase())
+      });
+    }
   }
+
+  
 }

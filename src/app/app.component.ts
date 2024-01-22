@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
     CommonModule, 
     RouterOutlet,
     HomeComponent,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

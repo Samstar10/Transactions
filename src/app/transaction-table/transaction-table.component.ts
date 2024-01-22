@@ -1,4 +1,4 @@
-import { Component, Input, NgIterable } from '@angular/core';
+import { Component, Input, NgIterable, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Transactionslist } from '../transactionslist';
 import { TransactionsService } from '../transactions.service';
@@ -15,4 +15,10 @@ import { HomeComponent } from '../home/home.component';
 })
 export class TransactionTableComponent {
   @Input() transactions!: NgIterable<Transactionslist>;
+  transactionsService: TransactionsService = inject(TransactionsService);
+
+
+  deleteTransaction(id: number) {
+    this.transactionsService.deleteTransaction(id);
+  }
 }
