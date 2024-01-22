@@ -1,11 +1,11 @@
-<form action="">
+<form [formGroup]="transactionForm" (ngSubmit)="submitTransaction()">
     <label for="date">Date:</label>
-    <input type="date">
+    <input type="date" formControlName="date">
     <label for="description">Description:</label>
-    <input type="text">
+    <input type="text" formControlName="description">
     <label for="category">Category:</label>
-    <input type="text">
+    <input type="text" formControlName="category">
     <label for="amount">Amount:</label>
-    <input type="number">
+    <input type="number" formControlName="amount">
     <button type="submit">Submit</button>
 </form>

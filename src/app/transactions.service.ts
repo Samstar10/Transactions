@@ -40,4 +40,8 @@ export class TransactionsService {
   getAllTransactions(): Transactionslist[] {
     return this.transactions;
   }
+
+  submitTransaction(date: string, description: string, category: string, amount: string) {
+    console.log('Submitted transaction:', date, description, category, amount);
+  }
 }
