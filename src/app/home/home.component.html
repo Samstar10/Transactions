@@ -1,8 +1,12 @@
 <section>
-    <form>
-        <input type="text" placeholder="Search transaction" #filter>
-        <button type="button" (click)="filterTransactions(filter.value)">Search</button>
-        <a [routerLink]="['add-transaction']"><button type=button>Add a transaction</button></a>
+    <form class="search-form">
+        <div class="search-bar">
+            <input type="text" placeholder="Search transaction" #filter>
+            <button type="button" (click)="filterTransactions(filter.value)">Search</button>
+        </div>
+        <div class="add-transaction-button">
+            <a [routerLink]="['add-transaction']"><button type=button>Add a transaction</button></a>
+        </div>
     </form>
 </section>
 <section>

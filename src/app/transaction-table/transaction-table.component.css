@@ -1,0 +1,36 @@
+button{
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--secondary-color);
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+    text-align: center;
+}
+
+th{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: var(--accent-color);
+}
+
+table{
+    width: 100%;
+}
