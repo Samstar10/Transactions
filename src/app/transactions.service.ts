@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Transactionslist } from './transactionslist';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,10 +16,8 @@ export class TransactionsService {
     return transactions
   }
 
-
   submitTransaction(date: string, description: string, category: string, amount: string) {
-    const transaction: Transactionslist = {
-      id: Math.floor(Math.random() * 1000),
+    const transaction: Omit<Transactionslist, 'id'> = {
       date: date,
       description: description,
       category: category,
@@ -41,6 +40,9 @@ export class TransactionsService {
     })
       .then(() => {
         console.log('Transaction deleted')
+      })
+      .catch((error) => {
+        console.error('Error deleting transaction:', error)
       })
   }
 }

@@ -20,5 +20,6 @@ export class TransactionTableComponent {
 
   deleteTransaction(id: number) {
     this.transactionsService.deleteTransaction(id);
+    window.location.reload();
   }
 }

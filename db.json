@@ -34,34 +34,6 @@
       "category": "Food",
       "description": "Groceries",
       "amount": 500
-    },
-    {
-      "id": "6",
-      "date": "2022-01-06",
-      "category": "Food",
-      "description": "Groceries",
-      "amount": 600
-    },
-    {
-      "id": "7",
-      "date": "2022-01-07",
-      "category": "Food",
-      "description": "Groceries",
-      "amount": 700
-    },
-    {
-      "id": "8",
-      "date": "2022-01-08",
-      "category": "Food",
-      "description": "Groceries",
-      "amount": 800
-    },
-    {
-      "id": 220,
-      "date": "2024-01-04",
-      "description": "uhwoco",
-      "category": "whbdd",
-      "amount": 300
     }
   ]
 }

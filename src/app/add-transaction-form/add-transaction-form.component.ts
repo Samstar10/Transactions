@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Transactionslist } from '../transactionslist';
 import { TransactionsService } from '../transactions.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-transaction-form',
@@ -15,7 +16,9 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './add-transaction-form.component.html',
   styleUrl: './add-transaction-form.component.css'
 })
-export class AddTransactionFormComponent {  
+export class AddTransactionFormComponent { 
+  
+  constructor(private router: Router) { }
 
   transactionForm = new FormGroup({
     date: new FormControl(),
@@ -34,6 +37,6 @@ export class AddTransactionFormComponent {
       this.transactionForm.value.amount ?? ''
     );
 
-    this.transactionForm.reset();
+    this.router.navigate(['/']);
   }
 }
